@@ -1,27 +1,13 @@
-#### A. How to create an Ansible Coniguration
+#### A.How to create an Ansible Configuration  
+###Step 1. Use "vim ansible.cfg" create a configuration file.   
+###Step 3. Input the needded information such as inventory, remote user, privilege escalation. 
+###Step 4. Escape from the file using esc with :wq.
 
-Step 1. Install Ansible using the apk add ansible command  
-
-
-Step 2. Enter the "vim ansible.cfg" command to configure the created ansible file  
-
-
-Step 3. After entering the command, input the needed information such inventory, remoter user, and privilege escalation  
-
-
-Step 4. Exit the file by pressing esc then :wq command  
+#### B.How to create an Ansible Inventory 
+###Step 1. Create an inventory file with the same name from the ansible.cfg. 
+###Step 2. Input the hostname and ip addresses. 
+###Step 3. Escape from the file using esc with :wq.
 
 
-Step 5. Use the cat command to see the information you have inputed  
-
-
-#### B. How to create an Ansible inventory  
-
-Step 1. Enter vim ansible.cfg command to enter the ansible file  
-
-Step 2. Input the inventory name with the same name as of the file  
-
-#### C. How to create an Ad-hoc Ansible command with setup and shell module  
-Step 1. Enter the "command (hostname) -m setup  
-
-Step 2. Enter the command ansible -m shell -a to run a linux command
+#### C. How to create an Ad-hoc Ansible command with setup and shell module 
+###Step 1. Enter the command ansible -m shell -a to run a linux command.
