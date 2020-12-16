@@ -1,0 +1,61 @@
+---
+ - name: FTP Server installation
+   hosts: ubuntu
+
+   tasks:
+   - name: VSFTP Installtion
+     apt:
+       name: vsftpd
+       state: latest
+       update_cache: yes
+
+   - name: Stop Firewall
+     service:
+       name: ufw
+       state: stopped
+       enabled: no
+
+   - name: Ftp User
+     user:
+       name: ocampo_ftp
+       password: $5$kUNRkucRuWroaZ96$oCmZVTEtrg0yLh0s1xOOMYs/zs7Ij6h4FB92aybHs7B
+       comment: "ocampo_ftp"
+
+   - name: Add DenyUsers
+     lineinfile:
+       path: /etc/ssh/sshd_config
+       line: "DenyUsers ocampo_ftp"
+     register: sshd_config
+
+   - name: Restart sshd service
+     service:
+       name: sshd
+       state: restarted
+     when: sshd_config.changed
+
+   -  name: Creating ftp directory
+      file:
+        path: /home/ocampo_ftp
+        state: directory
+        owner: nobody
+        group: nogroup
+        mode: '0555'
+
+   - name: Creating files directory
+     file:
+       path: /home/ocampo_ftp/files
+       state: directory
+       owner: ocampo_ftp
+       group: ocampo_ftp
+
+   - name: Copy vsftpd.conf
+     copy:
+       src: vsftpd.conf
+       dest: /etc/vsftpd.conf
+     register: vsftpd_config
+
+   - name: Restart vsftpd.conf
+     service:
+       name: vsftpd
+       state: restarted
+     when: vsftpd_config.changed
