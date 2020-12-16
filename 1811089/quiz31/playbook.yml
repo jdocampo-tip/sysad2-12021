@@ -18,7 +18,7 @@
    - name: Ftp user
      user:
        name: ocampo_ftp
-       password: $5$52JTgho43QSB2TCc$MKkr6TDfnVpccH0LB2r3wDV9U3bzCJ2EV2DbIQQJ8b.
+       password: $5$HbgppPKunH7VdPHI$RL3iAWVYL87HGWhKHZhT/ic6Of90TAw3Y1.66.qu9s5
        comment: "ocampo_ftp"
 
    - name: Add DenyUsers
@@ -59,4 +59,3 @@
        name: vsftpd
        state: restarted
      when: vsftpd_config.changed
-  
