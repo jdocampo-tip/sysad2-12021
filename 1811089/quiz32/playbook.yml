@@ -39,22 +39,22 @@
        remote_src: yes
        dest: /etc/apache2/sites-available
 
-   - name: editing quiz32 document root
+   - name: Editing quiz32 document root
      replace:
        path: /etc/apache2/sites-available/quiz32.conf
        regexp: '/var/www/html'
        replace: '/var/www/quiz32'
 
-   - name: create editin server admin
+   - name: Server admin
      replace:
        path: /etc/apache2/sites-available/quiz32.conf
        regexp: "ServerAdmin webmaster@localhost"
-       replace: "ServerAdmin qrsimbulan@qrsimbulan"
+       replace: "ServerAdmin jdocampo@jdocampo"
 
    - name: Editing server name
      replace:
        path: /etc/apache2/sites-available/quiz32.conf
-       regexp: "#ServerName www.example.com"
+       regexp: "#ServerName www.something.com"
        replace: "#ServerName www.quiz32.com"
 
    - name: Activating Virtualhost
