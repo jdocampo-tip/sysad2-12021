@@ -1,0 +1,33 @@
+---
+- name: Cloning prelims on  centos
+  hosts:
+   - centos
+  vars_files:
+   - config.yaml
+  roles:
+   - centosclone
+#   - centosftp
+#   - centosnagios
+#   - motd
+
+#- name: Cloning prelims on debian
+#  hosts:
+#   - debian
+#  vars_files:
+#   - config.yaml
+#  roles:
+#   - debianclone
+#   - debianftp
+#   - debianagios
+#   - motd
+
+#- name: Cloning prelims on OpenSuse
+#  hosts:
+#   - suse
+#  vars_files:
+#   - config.yaml
+#  roles:
+#   - suseclone
+#   - suseftp
+#   - susenagios
+#   - motd
