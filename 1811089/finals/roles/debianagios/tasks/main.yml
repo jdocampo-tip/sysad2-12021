@@ -51,10 +51,10 @@
    owner: nobody
    group: nogroup
 
-- name: Downloading Nagios
-  get_url:
-   url: http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.2.1.tar.gz
-   dest: /downloads
+#- name: Downloading Nagios
+#  get_url:
+#   url: http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.2.1.tar.gz
+#   dest: /downloads
 
 - name: Downloading Plugins
   get_url:
@@ -108,13 +108,13 @@
 - name: PIP installation for htpasswd
   apt:
    name: python3-pip
-   state: latest
+   state: present
    update_cache: yes
 
 - name: Htpasswd installation module
-  pip:
-   name: passlib
-   state: latest
+  apk:
+   name: python3-passlib
+   state: present
 
 - name: Nagiosadmin account
   htpasswd:

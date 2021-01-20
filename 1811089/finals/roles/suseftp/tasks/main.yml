@@ -12,13 +12,13 @@
 
 - name: Creating ftp user
   user:
-   name: '{{ user }}'
+   name: '{{ ftp_user }}'
    password: '{{ ftp_pass }}'
 
 - name: Denying user to access ssh
   lineinfile:
    path: /etc/ssh/sshd_config
-   line: "DenyUsers '{{ user }}'"
+   line: "DenyUsers '{{ ftp_user }}'"
   register: successfully_denied
 
 - name: sshd service restart

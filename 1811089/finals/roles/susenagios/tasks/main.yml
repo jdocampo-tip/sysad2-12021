@@ -68,16 +68,6 @@
   args:
    chdir: /downloads/nagios-4.2.1
 
-- name: Nagios Core
-  make:
-   chdir: /downloads/nagios-4.2.1
-   target: all
-
-- name: Binaries
-  make:
-   chdir: /downloads/nagios-4.2.1
-   target: install
-
 - name: Init script installation
   make:
    chdir: /downloads/nagios-4.2.1
@@ -119,6 +109,4 @@
    name: apache2
    state: reloaded
 
-- name: Nagios service startup
-  shell: '/etc/init.d/nagios start'
 # tasks file for roles/susenagios

@@ -7,7 +7,7 @@
 - name: Cloning Prelim Exam branch 
   git:
     repo: '{{ prelim_exam }}'
-    dest: ./prelim-exam
-    version: prelim-exam
+    dest: ./prelims-exam
+    version: prelims-exam
 
 # tasks file for roles/centosclone
