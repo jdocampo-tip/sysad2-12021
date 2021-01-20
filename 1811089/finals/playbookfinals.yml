@@ -7,8 +7,8 @@
   roles:
    - centosclone
    - centosftp
-   - centosnagios
    - motd
+   - centosnagios
 
 - name: Cloning prelims on OpenSuse
   hosts:
